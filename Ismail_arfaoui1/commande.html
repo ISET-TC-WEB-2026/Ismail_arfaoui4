@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantStore - Passer la Commande</title>
+    <link rel="icon" href="img/TREES.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/S.css">
+</head>
+<body>
+
+    <header id="PlantStore">
+        <h1>PlantStore</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="commande.html">Commande</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout-container">
+            <h2>Finaliser votre Commande</h2>
+            
+            <form action="#" method="POST">
+                
+                <!-- 1. Informations de Livraison -->
+                <fieldset style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background-color: #ffffff;">
+                    <legend style="font-weight: bold; color: #2c6e49; padding: 0 10px;">Informations de Livraison</legend>
+                    
+                    <p style="margin-bottom: 15px;">
+                        <label for="nom" style="display: block; margin-bottom: 5px; font-weight: 500;">* Nom complet :</label>
+                        <input type="text" id="nom" name="nom" placeholder="Ex. Ahmed Ben Ali" minlength="4" maxlength="50" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                    </p>
+                    
+                    <p style="margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: 500;">* Adresse e-mail :</label>
+                        <input type="email" id="email" name="email" placeholder="exemple@email.com" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                    </p>
+                    
+                    <p style="margin-bottom: 15px;">
+                        <label for="telephone" style="display: block; margin-bottom: 5px; font-weight: 500;">* Téléphone de contact (8 chiffres) :</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Ex. 20123456" pattern="[0-9]{8}" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                    </p>
+                    
+                    <p style="margin-bottom: 15px;">
+                        <label for="adresse" style="display: block; margin-bottom: 5px; font-weight: 500;">* Adresse de livraison :</label>
+                        <input type="text" id="adresse" name="adresse" placeholder="Numéro, Rue, Appartement..." required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                    </p>
+
+                    <p style="margin-bottom: 15px;">
+                        <label for="ville" style="display: block; margin-bottom: 5px; font-weight: 500;">* Ville :</label>
+                        <select id="ville" name="ville" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; background-color: white;">
+                            <option value="" disabled selected>-- Choisir votre ville --</option>
+                            <option value="tunis">Tunis</option>
+                            <option value="ariana">Ariana</option>
+                            <option value="ben_arous">Ben Arous</option>
+                            <option value="sousse">Sousse</option>
+                            <option value="sfax">Sfax</option>
+                            <option value="autre">Autre Ville</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <!-- 2. Options de Paiement -->
+                <fieldset style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background-color: #ffffff;">
+                    <legend style="font-weight: bold; color: #2c6e49; padding: 0 10px;">Mode de Paiement</legend>
+    
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                        <input type="radio" name="paiement" value="cod" checked> 
+                         Paiement en espèces à la livraison (COD)
+                    </label>
+    
+                    <label style="display: block; cursor: pointer;">
+                        <input type="radio" name="paiement" value="carte"> 
+                        Paiement par Carte Bancaire / E-Dinar
+                    </label>
+                </fieldset>
+
+                <!-- 3. Notes de commande complémentaires -->
+                <fieldset style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background-color: #ffffff;">
+                    <legend style="font-weight: bold; color: #2c6e49; padding: 0 10px;">Notes de commande</legend>
+                    <p style="margin-bottom: 15px;">
+                        <label for="notes" style="display: block; margin-bottom: 5px;">Instructions spécifiques pour le livreur (optionnel) :</label>
+                        <textarea id="notes" name="notes" rows="4" maxlength="200" placeholder="Ex: Digicode, appeler avant de livrer..." style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-family: sans-serif; resize: vertical;"></textarea>
+                        <small style="display: block; color: #64748b; margin-top: 5px;">Maximum 200 caractères.</small>
+                    </p>
+                    
+                    <p style="margin-top: 15px;">
+                        <label class="checkbox-label" style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox" name="conditions" required> * J'accepte les conditions générales de vente de PlantStore.
+                        </label>
+                    </p>
+                </fieldset>
+
+                <!-- Boutons d'action -->
+                <div class="form-buttons" style="margin-top: 20px; display: flex; gap: 15px;">
+                    <button type="submit" class="btn" style="flex: 2; margin-top: 0; cursor: pointer; border: none;">
+                        Confirmer la commande
+                    </button>
+                    <button type="reset" class="j" style="flex: 1; margin-top: 0; cursor: pointer; font-family: sans-serif;">
+                        Annuler
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PlantStore. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
